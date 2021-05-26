@@ -1,0 +1,4 @@
+- [Homepage](https://www.coinex.org/)
+- Translations
+  - [:cn: 中文](/)
+  - [:uk: English](/en-us/introduction.md)

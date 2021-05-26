@@ -1,0 +1,74 @@
+## Node CLI
+Using `cetd --help` to check instructions of each operation and supported parameter options, and then end operations related to validator node.
+
+Parameter options related to validator node:
+
+| Option | Descripition |
+| --- | ----------- |
+|`--from`| Tx created address |
+|`--validator.address`| Validator address|
+|`--validator.rewardaddr` | Validator's reward receipt address|
+|`--validator.moniker` | Validator's nickname|
+|`--validator.website` | Validator's website|
+|`--validator.email` | Validator's Email|
+|`--validator.detail` | Validator's description|
+|`--validator.staking` | Staking amount|
+|`--validator.staker` | Staker address|
+|`--node`| Connect node RPC|
+|`--nonce`| Address's nonce |
+|`--tx.gaslimit` | Gas limit of this transaction|
+|`--tx.gasprice` | Gas price of this transaction|
+|`--keystore` | Key file path of this address|
+|`--password` | Key file password of this address| 
+
+### Create validator node
+
+`cetd validator.create --from 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --keystore ./data/keystore/ --validator.rewardaddr 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --validator.moniker 'hello' --validator.website 'https://www.coinex.com' --validator.email 'developer@coinex.com' --validator.detail 'coinex smart chain' --node http://127.0.0.1:8545`
+
+### Edit validator node
+
+`cetd validator.edit --from 0x42eacf5b37540920914589a6b1b5e45d82d0c1ca --keystore ./data/keystore/ --validator.rewardaddr 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --validator.moniker 'hello' --validator.website 'https://www.coinex.com' --validator.email 'developer@coinex.com' --validator.detail 'coinex smart chain' --node http://127.0.0.1:38545`
+
+### Stake for validator node
+
+`cetd staking --from 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --keystore ./data/keystore/ --validator.address 0x42eacf5b37540920914589a6b1b5e45d82d0c1ca --validator.staking 1001000000000000000000  --node http://127.0.0.1:8549`
+
+### Unstake
+
+`cetd unstaking --from 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --validator.address 0x42eacf5b37540920914589a6b1b5e45d82d0c1ca --keystore ./data/keystore/ --node http://127.0.0.1:8549`
+
+### Withdraw staking
+
+`cetd withdrawstake --from 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --validator.address 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --node http://127.0.0.1:28545`
+
+### Withdraw reward
+
+`cetd withdrawreward --from 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --validator.address 0x42eacf5b37540920914589a6b1b5e45d82d0c1ca --keystore ./data/keystore/ --node http://127.0.0.1:8549`
+
+### Unjail node
+
+`cetd unjail --from 0x582bd2e02494dc6beb9a14401f4eae009533484c --password ./password.txt --node http://127.0.0.1:8552`
+
+### Inquire validator description info
+
+`cetd validator.description.query --validator.address 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --node http://127.0.0.1:28545`
+
+### Inquire node info such as block generation, reward, etc
+
+`cetd validator.info.query --validator.address 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --node http://127.0.0.1:8549`
+
+### Inquire activated node list
+
+`cetd validator.activated.query --node http://127.0.0.1:38545`
+
+### Inquire candidate node list
+
+`cetd validator.candidators.query --node http://127.0.0.1:28545`
+
+### Inquire staking info from any address to node
+
+`cetd validator.staking.query --validator.address 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --validator.staker 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --node http://127.0.0.1:38545`
+
+### Inquire validator penalty record
+
+`cetd validator.slash.record --validator.address 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --node http://127.0.0.1:38545`
