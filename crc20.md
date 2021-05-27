@@ -37,7 +37,7 @@ ABI = '[{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":
 
 ### 连接CSC公共节点
 
-#### javaScript
+#### javascript
 
 * 主网
 

@@ -37,7 +37,7 @@ ABI = '[{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":
 
 ### Connect CSC public nodes
 
-#### JavaScript
+#### javascript
 
 * Mainnet
 
