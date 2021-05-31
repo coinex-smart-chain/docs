@@ -1,6 +1,6 @@
-# Coinex智能合约链(Coinex Smart Chain - CSC)
+# CoinEx智能合约链(CoinEx Smart Chain - CSC)
 
-Coinex智能合约链(Coinex Smart Chain - CSC)是一个基于[`CPoS`](/consensus.md)共识协议打造，最多支持101个验证节点的智能合约链。`CSC`具有更短的出块时间、更低手续费等优点，在支撑高性能交易的同时，完全兼容以太坊虚拟机(EVM)及协议。同时秉承去中心化、无需许可原则，任何人都可以通过质押成为验证节点。
+CoinEx智能合约链(CoinEx Smart Chain - CSC)是一个基于[`CPoS`](/consensus.md)共识协议打造，最多支持101个验证节点的智能合约链。`CSC`具有更短的出块时间、更低手续费等优点，在支撑高性能交易的同时，完全兼容以太坊虚拟机(EVM)及协议。同时秉承去中心化、无需许可原则，任何人都可以通过质押成为验证节点。
 
 ## CSC特性
 
