@@ -40,7 +40,7 @@ cpu: 8core
 
 启动`CSC`首先需要`cetd`二进制文件：
 * 可以从[github](https://github.com/coinex-smart-chain/csc)下载源代码[编译](./node_compile.md)得到`cetd`
-* 直接下载[二进制包cetd](https://github.com/coinex-smart-chain/csc)
+* 直接下载[二进制包cetd](https://github.com/coinex-smart-chain/csc-testnet)
 
 ### 初始化节点
 

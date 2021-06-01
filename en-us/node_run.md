@@ -40,7 +40,7 @@ HDD: SSD 500GB
 
 Firstly, starting `CSC` requires the 'cetd' binary file:
 * Download code from [github](https://github.com/coinex-smart-chain/csc), [compile](/en-us/node_compile.md) and get cetd.
-* Directly download [Binary package cetd](https://github.com/coinex-smart-chain/csc).
+* Directly download [Binary package cetd](https://github.com/coinex-smart-chain/csc-testnet).
 
 ### Initialize
 

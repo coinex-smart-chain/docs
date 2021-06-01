@@ -27,48 +27,48 @@ Parameter options related to validator node:
 
 ### Edit validator node
 
-`cetd validator.edit --from 0x42eacf5b37540920914589a6b1b5e45d82d0c1ca --keystore ./data/keystore/ --validator.rewardaddr 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --validator.moniker 'hello' --validator.website 'https://www.coinex.com' --validator.email 'developer@coinex.com' --validator.detail 'coinex smart chain' --node http://127.0.0.1:38545`
+`cetd validator.edit --from 0x42eacf5b37540920914589a6b1b5e45d82d0c1ca --keystore ./data/keystore/ --validator.rewardaddr 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --validator.moniker 'hello' --validator.website 'https://www.coinex.com' --validator.email 'developer@coinex.com' --validator.detail 'coinex smart chain' --node http://127.0.0.1:8545`
 
 ### Stake for validator node
 
-`cetd staking --from 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --keystore ./data/keystore/ --validator.address 0x42eacf5b37540920914589a6b1b5e45d82d0c1ca --validator.staking 1001000000000000000000  --node http://127.0.0.1:8549`
+`cetd staking --from 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --keystore ./data/keystore/ --validator.address 0x42eacf5b37540920914589a6b1b5e45d82d0c1ca --validator.staking 1001000000000000000000  --node http://127.0.0.1:8545`
 
 ### Unstake
 
-`cetd unstaking --from 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --validator.address 0x42eacf5b37540920914589a6b1b5e45d82d0c1ca --keystore ./data/keystore/ --node http://127.0.0.1:8549`
+`cetd unstaking --from 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --validator.address 0x42eacf5b37540920914589a6b1b5e45d82d0c1ca --keystore ./data/keystore/ --node http://127.0.0.1:8545`
 
 ### Withdraw staking
 
-`cetd withdrawstake --from 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --validator.address 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --node http://127.0.0.1:28545`
+`cetd withdrawstake --from 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --validator.address 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --node http://127.0.0.1:8545`
 
 ### Withdraw reward
 
-`cetd withdrawreward --from 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --validator.address 0x42eacf5b37540920914589a6b1b5e45d82d0c1ca --keystore ./data/keystore/ --node http://127.0.0.1:8549`
+`cetd withdrawreward --from 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --validator.address 0x42eacf5b37540920914589a6b1b5e45d82d0c1ca --keystore ./data/keystore/ --node http://127.0.0.1:8545`
 
 ### Unjail node
 
-`cetd unjail --from 0x582bd2e02494dc6beb9a14401f4eae009533484c --password ./password.txt --node http://127.0.0.1:8552`
+`cetd unjail --from 0x582bd2e02494dc6beb9a14401f4eae009533484c --password ./password.txt --node http://127.0.0.1:8545`
 
 ### Inquire validator description info
 
-`cetd validator.description.query --validator.address 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --node http://127.0.0.1:28545`
+`cetd validator.description.query --validator.address 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --node http://127.0.0.1:8545`
 
 ### Inquire node info such as block generation, reward, etc
 
-`cetd validator.info.query --validator.address 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --node http://127.0.0.1:8549`
+`cetd validator.info.query --validator.address 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --node http://127.0.0.1:8545`
 
 ### Inquire activated node list
 
-`cetd validator.activated.query --node http://127.0.0.1:38545`
+`cetd validator.activated.query --node http://127.0.0.1:8545`
 
 ### Inquire candidate node list
 
-`cetd validator.candidators.query --node http://127.0.0.1:28545`
+`cetd validator.candidators.query --node http://127.0.0.1:8545`
 
 ### Inquire staking info from any address to node
 
-`cetd validator.staking.query --validator.address 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --validator.staker 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --node http://127.0.0.1:38545`
+`cetd validator.staking.query --validator.address 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --validator.staker 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --node http://127.0.0.1:8545`
 
 ### Inquire validator penalty record
 
-`cetd validator.slash.record --validator.address 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --node http://127.0.0.1:38545`
+`cetd validator.slash.record --validator.address 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --node http://127.0.0.1:8545`
