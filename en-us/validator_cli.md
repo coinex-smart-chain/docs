@@ -31,7 +31,7 @@ Parameter options related to validator node:
 
 ### Stake for validator node
 
-`cetd staking --from 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --validator.address 0x42eacf5b37540920914589a6b1b5e45d82d0c1ca --validator.staking 1000000000000000000000 --keystore ./data/keystore/ --node http://127.0.0.1:8545`
+`cetd staking --from 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --validator.address 0x42eacf5b37540920914589a6b1b5e45d82d0c1ca --validator.staking 10000000000000000000000 --keystore ./data/keystore/ --node http://127.0.0.1:8545`
 
 ### Unstake
 
