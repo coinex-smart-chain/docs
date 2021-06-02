@@ -23,15 +23,15 @@
 
 ### 创建验证节点
 
-`cetd validator.create --from 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --keystore ./data/keystore/ --validator.rewardaddr 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --validator.moniker 'hello' --validator.website 'https://www.coinex.com' --validator.email 'developer@coinex.com' --validator.detail 'coinex smart chain' --node http://127.0.0.1:8545`
+`cetd validator.create --from 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec  --validator.rewardaddr 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --validator.moniker '<your node moniker>' --validator.website '<your home site>' --validator.email '<your contract email>' --validator.detail '<your node description>' --keystore ./data/keystore/ --node http://127.0.0.1:8545`
 
 ### 编辑验证节点
 
-`cetd validator.edit --from 0x42eacf5b37540920914589a6b1b5e45d82d0c1ca --keystore ./data/keystore/ --validator.rewardaddr 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --validator.moniker 'hello' --validator.website 'https://www.coinex.com' --validator.email 'developer@coinex.com' --validator.detail 'coinex smart chain' --node http://127.0.0.1:8545`
+`cetd validator.edit --from 0x42eacf5b37540920914589a6b1b5e45d82d0c1ca --validator.rewardaddr 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --validator.moniker '<your node moniker>' --validator.website '<your home site>' --validator.email '<your contract email>' --validator.detail '<your node description>' --keystore ./data/keystore/  --node http://127.0.0.1:8545`
 
 ### 给验证节点质押
 
-`cetd staking --from 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --keystore ./data/keystore/ --validator.address 0x42eacf5b37540920914589a6b1b5e45d82d0c1ca --validator.staking 1001000000000000000000  --node http://127.0.0.1:8545`
+`cetd staking --from 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec  --validator.address 0x42eacf5b37540920914589a6b1b5e45d82d0c1ca --validator.staking 1000000000000000000000 --keystore ./data/keystore/ --node http://127.0.0.1:8545`
 
 ### 解除质押
 
@@ -39,7 +39,7 @@
 
 ### 提取质押
 
-`cetd withdrawstake --from 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --validator.address 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --node http://127.0.0.1:8545`
+`cetd withdrawstake --from 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --validator.address 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --keystore ./data/keystore/ --node http://127.0.0.1:8545`
 
 ### 提取出块奖励
 
@@ -47,7 +47,7 @@
 
 ### 释放出块节点
 
-`cetd unjail --from 0x582bd2e02494dc6beb9a14401f4eae009533484c --password ./password.txt --node http://127.0.0.1:8545`
+`cetd unjail --from 0x582bd2e02494dc6beb9a14401f4eae009533484c --keystore ./data/keystore/ --node http://127.0.0.1:8545`
 
 ### 查询节点的描述信息
 
