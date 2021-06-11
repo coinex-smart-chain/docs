@@ -17,7 +17,7 @@ Refer to [Node Run](/en-us/node_run.md)
 You need to create an account that represents a validator's consensus key for block signatures. Use the following command to create a new account and set a password for that account:
 
 ```
-cetd account new --datadir /path/your-data-localtion-fold
+cetd account new --datadir /path/your-data-localtion-folder
 ```
 
 ## Start Validator Node
@@ -25,10 +25,10 @@ cetd account new --datadir /path/your-data-localtion-fold
 Save keyfile password of validator account in file
 
 ```
-echo {your password} > password.txt
+echo "your password" > password.txt
 ```
 
 Start mining
 ```
-cetd --datadir /path/your-data-localtion-fold -unlock {your validator address} --password password.txt  --mine  --allow-insecure-unlock
+cetd --datadir /path/your-data-localtion-folder -unlock "your validator address" --password /path/your-keyfile-folder/password.txt  --mine  --allow-insecure-unlock
 ```
