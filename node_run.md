@@ -40,7 +40,7 @@ cpu: 8core
 
 启动`CSC`首先需要`cetd`二进制文件：
 * 可以从[github](https://github.com/coinex-smart-chain/csc)下载源代码[编译](./node_compile.md)得到`cetd`
-* 直接下载[二进制包cetd](https://github.com/coinex-smart-chain/csc-testnet)
+* 直接下载[二进制包cetd](https://github.com/coinex-smart-chain/csc/releases)
 
 ### 初始化节点
 
@@ -89,6 +89,8 @@ cetd --datadir /path/your-data-localtion-fold
 
 为使大家能够很容易的部署`CSC`节点，我们将一些默认配置集成到二进制包`cetd`文件中，任何人无需任何配置即可启动。对于专业用户，可以参考以下配置，进行优化配置，然后启动命令为：`cetd --config ./<your config file>`
 
+例如：测试网config
+
 ```
 [Eth]
 NetworkId = 53
@@ -109,7 +111,7 @@ EVMInterpreter = ""
 [Eth.Miner]
 GasFloor = 30000000
 GasCeil = 42000000
-GasPrice = 100000000000
+GasPrice = 500000000000
 Recommit = 10000000000
 Noverify = false
 
@@ -118,7 +120,7 @@ Locals = []
 NoLocals = true
 Journal = "transactions.rlp"
 Rejournal = 3600000000000
-PriceLimit = 100000000000
+PriceLimit = 500000000000
 PriceBump = 10
 AccountSlots = 16
 GlobalSlots = 4096

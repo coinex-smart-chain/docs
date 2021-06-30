@@ -40,7 +40,7 @@ HDD: SSD 500GB
 
 Firstly, starting `CSC` requires the 'cetd' binary file:
 * Download code from [github](https://github.com/coinex-smart-chain/csc), [compile](/en-us/node_compile.md) and get cetd.
-* Directly download [Binary package cetd](https://github.com/coinex-smart-chain/csc-testnet).
+* Directly download [Binary package cetd](https://github.com/coinex-smart-chain/csc/releases).
 
 ### Initialize
 
@@ -86,6 +86,8 @@ We have assigned P2P seed Node in `cetd` by default. You can change and assign t
 
 To make it easy for all users to deploy `CSC` nodes, we have integrated some default configuration into the binary package 'cetd' file so that everyone can start without any configuration. For professional users, you can refer to the following configuration, optimize the configuration, and then start the command as: `cetd --config ./<your config file>`
 
+eg：testnet config
+
 ```
 [Eth]
 NetworkId = 53
@@ -106,7 +108,7 @@ EVMInterpreter = ""
 [Eth.Miner]
 GasFloor = 30000000
 GasCeil = 42000000
-GasPrice = 100000000000
+GasPrice = 500000000000
 Recommit = 10000000000
 Noverify = false
 
@@ -115,7 +117,7 @@ Locals = []
 NoLocals = true
 Journal = "transactions.rlp"
 Rejournal = 3600000000000
-PriceLimit = 100000000000
+PriceLimit = 500000000000
 PriceBump = 10
 AccountSlots = 16
 GlobalSlots = 4096

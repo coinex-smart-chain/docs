@@ -9,7 +9,7 @@ Goals of `CSC`:
 
 ## CPoS Consensus
 
-Although `Proof of Work (POW)` has been proved to be a practical solution for decentralized networks, yet it is not environment-friendly and requires a large number of participants to maintain network security.
+Although `Proof of Work (PoW)` has been proved to be a practical solution for decentralized networks, yet it is not environment-friendly and requires a large number of participants to maintain network security.
 
 On the other hand, Ethereum and some other networks use `Proof of Authority (PoA)` or its variants in different scenarios, including test network and main network. `PoA` provides defense for 51% attack and is more effective in preventing evil-doing by some Byzantine nodes. However, `PoA` protocol is not decentralized enough, for the validators are prone to corruption and security attacks given the extreme powers they possess. 
 
@@ -28,11 +28,11 @@ After rigorous investigation and research, CoinEx Team adheres to the principle 
 
 Everyone is welcome to apply and become validator by staking `CET`. The first staking for the validator must exceed `10000 CET` and based on overall staking ranking, the blockchain will select the top 101 nodes as validators in every 200 blocks. The validator has the obligation to generate blocks and verify on-chain info. In return, the validator will be rewarded with block commission fees and a certain amount of block production reward (currently `1 CET`) on the basis of the proportion of their staking.
 
-1. Staking
+2. Staking
 
 Everyone is welcome to assist nodes to become validator by staking `CET`. The assets can be unstaked directly via contract calls or command operations and these `CET` will be available for withdrawal after 86,400 blocks.
 
-1. System contract
+3. System contract
 
 `CSC` manages node staking and governance via system contracts. The system contract has been deployed after `CSC` launch. Currently, 2 sets of system contracts are designed for `CSC`:
 
