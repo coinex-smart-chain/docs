@@ -11,6 +11,7 @@
   - [Introduction](/en-us/validator_intro.md)
   - [Run](/en-us/validator_guide.md)
   - [CLI](/en-us/validator_cli.md)
+  - [Genesis Contract](/genesis_contract.md)
 - DApp development
   - [Mainnet](/en-us/mainnet.md)
   - [Testnet](/en-us/testnet.md)

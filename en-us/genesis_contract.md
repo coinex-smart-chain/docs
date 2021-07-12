@@ -1,12 +1,12 @@
-# 系统合约调用
+# Genesis Contract
 
 [csc-genesis-contract](https://github.com/coinex-smart-chain/csc-genesis-contract)
 
-## 合约方法说明
+## Method Statement
 
-### 1. 验证节点合约
+### 1. Validator Contract
 
-#### 创建验证节点
+#### Create validator
 
 - name: `create`
 - type: transaction(payable)
@@ -14,22 +14,22 @@
 - params: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
-    | rewardAddr | address | yes | 验证节点收益接收地址 |
-    | moniker | str | no | 验证节点昵称 |
-    | website | str | no | 验证节点官网 |
-    | email | str | no | 验证节点邮箱 |
-    | details | str | no | 验证节点描述 |
+    | rewardAddr | address | yes | reward address |
+    | moniker | str | no | moniker |
+    | website | str | no | website |
+    | email | str | no | email |
+    | details | str | no | details |
 - result: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
-    | success | bool | yes | 是否执行成功 |
+    | success | bool | yes | success |
 - event:
     | name | event | must | description |
     | :--- | :--- | :--- | :--- |
-    | ValidatorCreated | `ValidatorCreated(address indexed validator, address indexed rewardAddr)` | yes | 创建验证节点 |
-    | Staking | `Staking(address indexed staker, address indexed validator, uint256 amount)` | no | 质押 |
+    | ValidatorCreated | `ValidatorCreated(address indexed validator, address indexed rewardAddr)` | yes | create validator |
+    | Staking | `Staking(address indexed staker, address indexed validator, uint256 amount)` | no | stake |
 
-#### 编辑验证节点
+#### Edit validator
 
 - name: `edit`
 - type: transaction(not payable)
@@ -37,21 +37,21 @@
 - params: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
-    | rewardAddr | address | yes | 验证节点收益接收地址 |
-    | moniker | str | no | 验证节点昵称 |
-    | website | str | no | 验证节点官网 |
-    | email | str | no | 验证节点邮箱 |
-    | details | str | no | 验证节点描述 |
+    | rewardAddr | address | yes | reward address |
+    | moniker | str | no | moniker |
+    | website | str | no | website |
+    | email | str | no | email |
+    | details | str | no | details |
 - result: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
-    | success | bool | yes | 是否执行成功 |
+    | success | bool | yes | success |
 - event:
     | name | event | must | description |
     | :--- | :--- | :--- | :--- |
-    | ValidatorUpdated | `ValidatorUpdated(address indexed validator, address indexed rewardAddr)` | yes | 更新验证节点信息 |
+    | ValidatorUpdated | `ValidatorUpdated(address indexed validator, address indexed rewardAddr)` | yes | update validator |
 
-#### 给验证节点质押
+#### Stake
 
 - name: `stake`
 - type: transaction(payable)
@@ -59,17 +59,17 @@
 - params: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
-    | validator | address | yes | 验证节点地址 |
+    | validator | address | yes | the address of validator |
 - result: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
-    | success | bool | yes | 是否执行成功 |
+    | success | bool | yes | success |
 - event:
     | name | event | must | description |
     | :--- | :--- | :--- | :--- |
-    | Staking | `Staking(address indexed staker, address indexed validator, uint256 amount)` | yes | 质押 |
+    | Staking | `Staking(address indexed staker, address indexed validator, uint256 amount)` | yes | stake |
 
-#### 解除质押
+#### Unstake
 
 - name: `unstake`
 - type: transaction(not payable)
@@ -77,17 +77,17 @@
 - params: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
-    | validator | address | yes | 验证节点地址 |
+    | validator | address | yes | the address of validator |
 - result: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
-    | success | bool | yes | 是否执行成功 |
+    | success | bool | yes | success |
 - event:
     | name | event | must | description |
     | :--- | :--- | :--- | :--- |
-    | Unstake | `Unstake(address indexed staker, address indexed validator, uint256 amount, uint256 unLockHeight)` | yes | 解除质押 |
+    | Unstake | `Unstake(address indexed staker, address indexed validator, uint256 amount, uint256 unLockHeight)` | yes | unstake |
 
-#### 提取质押
+#### Withdraw staking
 
 - name: `withdrawStaking`
 - type: transaction(not payable)
@@ -95,17 +95,17 @@
 - params: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
-    | validator | address | yes | 验证节点地址 |
+    | validator | address | yes | the address of validator |
 - result: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
-    | success | bool | yes | 是否执行成功 |
+    | success | bool | yes | success |
 - event:
     | name | event | must | description |
     | :--- | :--- | :--- | :--- |
-    | WithdrawStaking | `WithdrawStaking(address indexed staker, address indexed validator, uint256 amount)` | yes | 提取质押 |
+    | WithdrawStaking | `WithdrawStaking(address indexed staker, address indexed validator, uint256 amount)` | yes | withdraw staking |
 
-#### 提取出块奖励
+#### Withdraw rewards
 
 - name: `withdrawRewards`
 - type: transaction(not payable)
@@ -113,17 +113,17 @@
 - params: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
-    | validator | address | yes | 验证节点地址 |
+    | validator | address | yes | the address of validator |
 - result: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
-    | success | bool | yes | 是否执行成功 |
+    | success | bool | yes | success |
 - event:
     | name | event | must | description |
     | :--- | :--- | :--- | :--- |
-    | WithdrawRewards | `WithdrawRewards(address indexed validator, address indexed rewardAddress, uint256 amount, uint256 nextWithdrawBlock)` | yes | 提取出块奖励 |
+    | WithdrawRewards | `WithdrawRewards(address indexed validator, address indexed rewardAddress, uint256 amount, uint256 nextWithdrawBlock)` | yes | withdraw rewards |
 
-#### 释放出块节点
+#### Unjail node
 
 - name: `unjailed`
 - type: transaction(not payable)
@@ -132,13 +132,13 @@
 - result: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
-    | success | bool | yes | 是否执行成功 |
+    | success | bool | yes | success |
 - event:
     | name | event | must | description |
     | :--- | :--- | :--- | :--- |
-    | ValidatorUnjailed | `ValidatorUnjailed(address indexed validator)` | yes | 释放出块节点 |
+    | ValidatorUnjailed | `ValidatorUnjailed(address indexed validator)` | yes | unjail node |
 
-#### 查询节点的描述信息
+#### Inquire validator description info
 
 - name: `getValidatorDescription`
 - type: call
@@ -146,16 +146,16 @@
 - params: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
-    | validator | address | yes | 验证节点地址 |
+    | validator | address | yes | the address of validator |
 - result: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
-    | moniker | str | yes | 验证节点昵称 |
-    | website | str | yes | 验证节点官网 |
-    | email | str | yes | 验证节点邮箱 |
-    | details | str | yes | 验证节点描述 |
+    | moniker | str | yes | moniker |
+    | website | str | yes | website |
+    | email | str | yes | email |
+    | details | str | yes | details |
 
-#### 查询节点的出块及奖励等信息
+#### Inquire node info such as block generation, reward, etc
 
 - name: `getValidatorInfo`
 - type: call
@@ -163,19 +163,19 @@
 - params: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
-    | validator | address | yes | 验证节点地址 |
+    | validator | address | yes | the address of validator |
 - result: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
-    | rewardAddr | address | yes | 验证节点收益接收地址 |
-    | status | uint8 | yes | 验证节点状态: NotExist-0, Created-1, Staked-2, Unstake-3, Jailed-4 |
-    | stakingAmount | uint256 | yes | 验证节点质押数量 |
-    | rewardAmount | uint256 | yes | 验证节点未提取的奖励数量 |
-    | slashAmount | uint256 | yes | 验证节点被惩罚的数量 |
-    | lastWithdrawRewardBlock | uint256 | yes | 上一次提取奖励的区块高度 |
-    | stakers | list | yes | 给该验证节点质押的address列表 |
+    | rewardAddr | address | yes | reward address |
+    | status | uint8 | yes | validator status: NotExist-0, Created-1, Staked-2, Unstake-3, Jailed-4 |
+    | stakingAmount | uint256 | yes | number of staking amount |
+    | rewardAmount | uint256 | yes | number of undrawn rewards |
+    | slashAmount | uint256 | yes | number of slash |
+    | lastWithdrawRewardBlock | uint256 | yes | block number when withdraw reward last time |
+    | stakers | list | yes | the address list staked to the validator |
 
-#### 查询当前出块节点列表
+#### Inquire activated node list
 
 - name: `getActivatedValidators`
 - type: call
@@ -184,9 +184,9 @@
 - result: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
-    | validatorSet | list | yes | 当前出块节点address列表 |
+    | validatorSet | list | yes | the address list of the current block producing node |
 
-#### 查询出块节点候选列表
+#### Inquire candidate node list
 
 - name: `getValidatorCandidate`
 - type: call
@@ -195,11 +195,11 @@
 - result: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
-    | candidates | list | yes | 候选出块节点address列表 |
-    | stakings | list | yes | 出块节点候选列表对应的质押数量列表(uint256[]) |
-    | count | uint256 | yes | 候选出块节点数量 |
+    | candidates | list | yes |  the address list of candidate nodes |
+    | stakings | list | yes | the staking number list that corresponds to candidate nodes list (uint256[]) |
+    | count | uint256 | yes | length of candidate nodes list |
 
-#### 获取某个地址对某个验证节点的质押信息
+#### Inquire staking info from any address to node
 
 - name: `getStakingInfo`
 - type: call
@@ -207,16 +207,16 @@
 - params: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
-    | staker | address | yes | 质押者地址 |
-    | validator | address | yes | 验证节点地址 |
+    | staker | address | yes | the address of staker |
+    | validator | address | yes | the address of validator |
 - result: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
-    | amount | uint256 | yes | 该质押人质押到该验证节点的质押数量 |
-    | unstakeBlock | uint256 | yes | 执行取回质押交易的区块高度 |
-    | index | uint256 | yes | 在验证节点质押人列表中的索引 |
+    | amount | uint256 | yes | staking amount |
+    | unstakeBlock | uint256 | yes | the block number when excute withdraw staking transaction |
+    | index | uint256 | yes | index in the staker list of the validator |
 
-#### 查询某个验证节点是否在当前出块节点列表中
+#### Inquire whether a validator is in the current block-producing node list
 
 - name: `isValidatorActivated`
 - type: call
@@ -224,13 +224,13 @@
 - params: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
-    | validator | address | yes | 验证节点地址 |
+    | validator | address | yes | the address of validator |
 - result: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
-    | isValidatorActivated | bool | yes | 出块节点是否在当前出块节点列表中 |
+    | isValidatorActivated | bool | yes | whether a validator is in the current block-producing node list |
 
-#### 查询某个验证节点是否在出块节点候选列表中
+#### Inquire whether a validator is in the candidate list
 
 - name: `isValidatorCandidate`
 - type: call
@@ -238,13 +238,13 @@
 - params: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
-    | validator | address | yes | 验证节点地址 |
+    | validator | address | yes | the address of validator |
 - result: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
-    | isValidatorCandidate | bool | yes | 出块节点是否在出块节点候选列表中 |
+    | isValidatorCandidate | bool | yes | whether a validator is in the candidate list |
 
-#### 查询某个验证节点是否是Jailed状态
+#### Inquire whether a particular validator is a Jailed state
 
 - name: `isJailed`
 - type: call
@@ -252,15 +252,15 @@
 - params: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
-    | validator | address | yes | 验证节点地址 |
+    | validator | address | yes | the address of validator |
 - result: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
-    | isJailed | bool | yes | 出块节点是否是Jailed状态 |
+    | isJailed | bool | yes | whether a validator is in Jailed state |
 
-### 2. 惩罚合约
+### 2. Slash Contract
 
-#### 查看出块节点错失的区块数
+#### Inquire validator penalty record
 
 - name: `getSlashRecord`
 - type: call
@@ -268,8 +268,8 @@
 - params: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
-    | validator | address | yes | 验证节点地址 |
+    | validator | address | yes | the address of validator |
 - result: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
-    | count | uint256 | yes | 错失出块数量 |
+    | count | uint256 | yes | number of missed blocks |
