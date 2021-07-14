@@ -5,7 +5,7 @@
 - [智能合约](https://docs.soliditylang.org/en/latest/)
 - 节点
   - [编译和安装](/node_compile.md)
-  - [启动](/node_run.md)
+  - [启动节点](/node_run.md)
   - [搭建私链](/node_private_chain.md)
 - 验证人
   - [介绍](/validator_intro.md)
@@ -18,3 +18,5 @@
   - [CRC20](/crc20.md)
   - [Remix](/contract_remix.md)
   - [Truffle](/contract_truffle.md)
+- FAQ
+  - [FAQ](/faq.md)

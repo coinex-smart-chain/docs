@@ -1,5 +1,5 @@
 ## Node CLI
-Using `cetd --help` to check instructions of each operation and supported parameter options, and then end operations related to validator node.
+Using `cetd --help` to check instructions of each operation and supported parameter options, and then introduce operations related to validator node.
 
 Parameter options related to validator node:
 
@@ -12,7 +12,7 @@ Parameter options related to validator node:
 |`--validator.website` | Validator's website|
 |`--validator.email` | Validator's Email|
 |`--validator.detail` | Validator's description|
-|`--validator.staking` | Staking amount|
+|`--validator.staking` | Staking amount(the unit is Wei, 1CET = 10^18Wei)|
 |`--validator.staker` | Staker address|
 |`--node`| Connect node RPC|
 |`--nonce`| Address's nonce |

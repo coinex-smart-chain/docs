@@ -1,5 +1,5 @@
 ## 节点CLI
-通过`cetd --help`查看各个操作命令说明，及支持的参数选项。接下来结束验证节点相关的操作。
+通过`cetd --help`查看各个操作命令说明，及支持的参数选项。接下来介绍验证节点相关的操作。
 
 验证节点相关的参数选项：
 
@@ -12,14 +12,14 @@
 |`--validator.website` | 验证节点官网|
 |`--validator.email` | 验证节点邮箱|
 |`--validator.detail` | 验证节点描述|
-|`--validator.staking` | 质押数量|
-|`--validator.staker` | 质押折地址|
+|`--validator.staking` | 质押数量（单位为Wei，1CET = 10^18Wei）|
+|`--validator.staker` | 质押者地址|
 |`--node`| 连接节点rpc|
 |`--nonce`| 指定交易地址nonce|
 |`--tx.gaslimit` | 指定交易gas limt|
 |`--tx.gasprice` | 指定交易gas price|
 |`--keystore` | 指定地址所在路径|
-|`--password` | 指定地址key file的密码| 
+|`--password` | 指定地址key file的密码|
 
 ### 创建验证节点
 

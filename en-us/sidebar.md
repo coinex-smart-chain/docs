@@ -3,7 +3,7 @@
 - [Consensus](/en-us/consensus.md)
 - [Genesis](/en-us/genesis.md)
 - [Smart Contract](https://docs.soliditylang.org/en/latest/)
-- Nodes
+- Node
   - [Compile](/en-us/node_compile.md)
   - [Run](/en-us/node_run.md)
   - [Private Chain](/en-us/node_private_chain.md)
@@ -18,3 +18,5 @@
   - [CRC20](/en-us/crc20.md)
   - [Remix](/en-us/contract_remix.md)
   - [Truffle](/en-us/contract_truffle.md)
+- FAQ
+  - [FAQ](/faq.md)
