@@ -21,6 +21,8 @@ Parameter options related to validator node:
 |`--keystore` | Key file path of this address|
 |`--password` | Key file password of this address| 
 
+> tip: Some commands, such as "Create validator node", will send a transaction and change the on-chain state, so you need to pay `CET` as a transaction fee.
+
 ### Create validator node
 
 `cetd validator.create --from 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec  --validator.rewardaddr 0x65804ab640b1d4db5733a36f9f4fd2877e4714ec --validator.moniker '<your node moniker>' --validator.website '<your home site>' --validator.email '<your contract email>' --validator.detail '<your node description>' --keystore ./data/keystore/ --node http://127.0.0.1:8545`

@@ -7,34 +7,17 @@ Because the block needs to be signed, the `keystore` and password to the validat
 Any address can stake to a validator. After the staker's address unstake and withdraw his staking, the staked `CET` will be returned to the original staker's address.
 The reward of the validator will be uniformly allocated to the reward receipt address set by the validator, and only the reward receipt address can withdraw the reward.
 
+> We suggest that the node builder separates validator's address and staker's address, so that the `keystore` and password of the staker do not need to be stored on the server, and there is no need to worry about the loss of the staker after the server is hacked.
+
 ## Can a staker's address be the CET address in the Coinex exchange?
 
 No. Validator's address, staker's address and reward receipt address can't be the address in the Coinex exchange. You need to transfer your CET to an address on the `CSC` where you have the secret key.
 
-## How can a MetaMask wallet address stakes？
+## How to stake？
 
-`cetd` needs `keystore` file to send transactions, you can export the private key from `MetaMask` to create `keystore` file.
+To make it easier for users to stake, `ViaWallet` is developing related features. In addition, the user can stake via command line operations, refer to [command-line operations](/validator_cli.md).
 
-First, export the private key from `MetaMask` and save it to a file.
-
-Then import the private key from the command line:
-```
-$ cetd account import YOUR-PRIVATE-KEY-FILE --datadir YOUR-KEYSTORE-PATH
-
-INFO [07-03|00:03:06.072] Maximum peer count                       ETH=200 LES=0 total=200
-INFO [07-03|00:03:06.080] Set global gas cap                       cap=25000000
-Your new account is locked with a password. Please give a password. Do not forget this password.
-Password:               # input keystore password
-Repeat password:        # input keystore password again
-```
-- `YOUR-PRIVATE-KEY-FILE` fill in the private key file
-- `YOUR-KEYSTORE-PATH` fill in the directory in which to save the `keystore` file
-- When you meet error like `Fatal: Failed to load the private key: invalid character '2' at end of key file`, delete '0x' at the beginning of the private key
-- The generated `keystore` file will be in `YOUR-KEYSTORE-PATH/keystore` with the file name like `UTC--2021-07-02T16-03-11.895849700Z--YOUR-ADDRESS`
-
-## How can a ViaWallet wallet address stakes？
-
-`cetd` needs `keystore` file to send transactions, you can export the private key from `ViaWallet` to create `keystore` file.
+`cetd` needs `keystore` file to send transactions, In addition to creating a new address, you can also export the private key of a created address from `ViaWallet` to create `keystore` file.
 
 First, export the private key from `ViaWallet` and save it to a file.
 ![ViaWallet export private key](./images/viawallet_export_privkey.png)

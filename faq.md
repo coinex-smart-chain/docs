@@ -7,34 +7,17 @@
 任意地址可以对验证节点进行质押，质押地址发起解除质押和提取质押交易后，质押的`CET`返回原质押地址。
 验证节点的奖励将统一分配到节点设置的收益接收地址，只有收益接收地址可以提取出块奖励。
 
+> 我们建议节点搭建者分离验证节点地址和质押地址，这样质押地址的`keystore`和密码不用保存在服务器上，不用担心服务器被攻破后质押地址的金额遭受损失。
+
 ## 质押地址可以用CoinEx交易所里的CET地址吗？
 
 不能，验证节点地址、质押地址和收益接收地址，都不能是交易所的地址，你需要把交易所的CET提现到一个你掌握秘钥的CSC链上地址。
 
-## MetaMask钱包地址怎样进行质押？
+## 怎样进行质押？
 
-`cetd`发送交易需要`keystore`文件，可以通过`MetaMask`钱包导出的私钥创建`keystore`文件。
+为方便用户进行质押，`ViaWallet`正在开发相关功能。此外，用户还可以通过命令行操作进行执行，参考[命令行操作](/validator_cli.md)。
 
-首先，从`MetaMask`导出私钥，保存到文件中。
-
-然后通过命令行导入私钥：
-```
-$ cetd account import YOUR-PRIVATE-KEY-FILE --datadir YOUR-KEYSTORE-PATH
-
-INFO [07-03|00:03:06.072] Maximum peer count                       ETH=200 LES=0 total=200
-INFO [07-03|00:03:06.080] Set global gas cap                       cap=25000000
-Your new account is locked with a password. Please give a password. Do not forget this password.
-Password:               # 输入keystore密码
-Repeat password:        # 再次输入keystore密码
-```
-- `YOUR-PRIVATE-KEY-FILE`填写私钥文件
-- `YOUR-KEYSTORE-PATH`填写保存`keystore`文件的目录
-- 执行时遇到`Fatal: Failed to load the private key: invalid character '2' at end of key file`报错时，将私钥开头的`0x`删除
-- 生成的`keystore`文件将在`YOUR-KEYSTORE-PATH/keystore`中，文件名形如`UTC--2021-07-02T16-03-11.895849700Z--YOUR-ADDRESS`
-
-## ViaWallet钱包地址怎样进行质押？
-
-`cetd`发送交易需要`keystore`文件，可以通过`ViaWallet`钱包导出的私钥创建`keystore`文件。
+`cetd`发送交易需要`keystore`文件，除创建新地址之外，还可以通过`ViaWallet`钱包导出已有地址的私钥来创建`keystore`文件。
 
 首先通过下图步骤复制出私钥，保存到文件中。
 ![ViaWallet导出私钥](./images/viawallet_export_privkey.png)

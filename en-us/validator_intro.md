@@ -10,7 +10,7 @@ Everyone can become validator by staking `CET`. Based on overall staking ranking
 
 ## How to stake
  
-After launch, `CSC` will initialize the validator system contract. Staking is available for everyone via invoking the contract directly. The first staking for the validator must exceed 10000CET and each subsequent staking must exceed 1000CET. In addition to stake by invoking the contract directly, you can also stake via node command line. More details of [Validator CLI](/en-us/validator_cli.md)
+After launch, `CSC` will initialize the validator system contract. Staking is available for everyone via invoking the contract directly. The first staking for the validator must exceed 10000CET and each subsequent staking must exceed 1000CET. In addition to staking by invoking the contract directly, you can also stake via node command line. More details of [Validator CLI](/en-us/validator_cli.md)
 
 ## Rewards
 

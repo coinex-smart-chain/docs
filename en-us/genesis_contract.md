@@ -11,6 +11,13 @@
 - name: `create`
 - type: transaction(payable)
 - method: `function create(address payable rewardAddr, string calldata moniker, string calldata website, string calldata email, string calldata details) external payable onlyInitialized returns (bool) `
+- conditions: 
+  1. A validator for this address has not been created;
+  2. RewardAddr is a non-zero address;
+  3. Other parameters are valid, moniker < 128 bytes, website < 256 bytes, email < 256 bytes, details < 1024 bytes.
+- actions: 
+  1. Create validator;
+  2. If the value of the transaction exceeds 10000 `CET`, the stake operation will be completed simultaneously.
 - params: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
@@ -34,6 +41,12 @@
 - name: `edit`
 - type: transaction(not payable)
 - method: `function edit(address payable rewardAddr, string calldata moniker, string calldata website, string calldata email, string calldata details) external onlyInitialized returns (bool) `
+- conditions: 
+  1. A validator for this address has been created;
+  2. RewardAddr is a non-zero address;
+  3. Other parameters are valid, moniker < 128 bytes, website < 256 bytes, email < 256 bytes, details < 1024 bytes.
+- actions: 
+  1. Update the validator's rewardAddr, moniker, website, email, and details.
 - params: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
@@ -56,6 +69,13 @@
 - name: `stake`
 - type: transaction(payable)
 - method: `function stake(address validator) external payable onlyInitialized returns (bool)`
+- conditions: 
+  1. A validator for this address has been created;
+  2. The status is not unstaking from the staker to the validator right now;
+  3. The amount of staking must exceed 1000`CET`;
+  4. After staking, the amount of the validator's total staking must exceed 10000`CET`.
+- actions: 
+  1. Stake for the validator to join the candidate validator list if the validator is not in it.
 - params: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
@@ -74,6 +94,12 @@
 - name: `unstake`
 - type: transaction(not payable)
 - method: `function unstake(address validator) external onlyInitialized returns (bool)`
+- conditions: 
+  1. A validator for this address has been created;
+  2. The status is not unstaking from the staker to the validator right now;
+  3. The amount of staking you staked to the validator is greater than 0.
+- actions: 
+  1. Unstake from the validator, if the amount of the validator's total staking less than 10000`CET`, kick it out of the candidate validator list.
 - params: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
@@ -92,6 +118,13 @@
 - name: `withdrawStaking`
 - type: transaction(not payable)
 - method: `function withdrawStaking(address validator) external returns (bool)`
+- conditions: 
+  1. A validator for this address has been created;
+  2. The status is unstaking from the staker to the validator. That is, you have unstaked from the validator;
+  3. The staking has been unlocked, that is, there are more than 86,400 blocks from your unstaking operation;
+  4. The amount of staking you staked to the validator is greater than 0.
+- actions: 
+  1. Withdraw all stakings staked to a validator.
 - params: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
@@ -110,6 +143,13 @@
 - name: `withdrawRewards`
 - type: transaction(not payable)
 - method: `function withdrawRewards(address validator) external returns (bool)`
+- conditions: 
+  1. A validator for this address has been created;
+  2. The address who create this transaction is the same as the rewardAddr set by the validator;
+  3. It has been over 86,400 blocks since you last withdraw the reward;
+  4. The number of rewards to be withdrew is greater than 0.
+- actions: 
+  1. Withdraw rewards.
 - params: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
@@ -128,6 +168,11 @@
 - name: `unjailed`
 - type: transaction(not payable)
 - method: `function unjailed() external onlyInitialized returns (bool)`
+- conditions: 
+  1. The creator of the transaction is a created validator, and the validator was in a 'Jailed' state.
+- actions: 
+  1. Invoke the `clean` method of the Slash contract to clear the node's wrong block record;
+  2. If the amount of the validator's total staking is more than 10000`CET`, add it to the candidate validator list.
 - params: 
 - result: 
     | name | type | required | description |

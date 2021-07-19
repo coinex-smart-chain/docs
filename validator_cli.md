@@ -16,10 +16,12 @@
 |`--validator.staker` | 质押者地址|
 |`--node`| 连接节点rpc|
 |`--nonce`| 指定交易地址nonce|
-|`--tx.gaslimit` | 指定交易gas limt|
+|`--tx.gaslimit` | 指定交易gas limit|
 |`--tx.gasprice` | 指定交易gas price|
 |`--keystore` | 指定地址所在路径|
 |`--password` | 指定地址key file的密码|
+
+> tip：部分命令如“创建验证节点”会发送交易并改变链上状态，需要支付`CET`作为手续费。
 
 ### 创建验证节点
 

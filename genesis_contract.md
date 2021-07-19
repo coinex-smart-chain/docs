@@ -11,6 +11,13 @@
 - name: `create`
 - type: transaction(payable)
 - method: `function create(address payable rewardAddr, string calldata moniker, string calldata website, string calldata email, string calldata details) external payable onlyInitialized returns (bool) `
+- conditions: 
+  1. 该地址的验证者未被创建；
+  2. rewardAddr是非零地址；
+  3. 其他参数有效，moniker小于128字节、website小于256字节、email小于256字节、details小于1024字节。
+- actions: 
+  1. 创建验证者；
+  2. 如果交易的value值超过10000`CET`，则将同步完成质押操作；
 - params: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
@@ -34,6 +41,12 @@
 - name: `edit`
 - type: transaction(not payable)
 - method: `function edit(address payable rewardAddr, string calldata moniker, string calldata website, string calldata email, string calldata details) external onlyInitialized returns (bool) `
+- conditions: 
+  1. 该地址的验证者已被创建；
+  2. rewardAddr是非零地址；
+  3. 其他参数有效，moniker小于128字节、website小于256字节、email小于256字节、details小于1024字节。
+- actions: 
+  1. 更新验证者的rewardAddr、moniker、website、email、details信息。
 - params: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
@@ -56,6 +69,13 @@
 - name: `stake`
 - type: transaction(payable)
 - method: `function stake(address validator) external payable onlyInitialized returns (bool)`
+- conditions: 
+  1. 该地址的验证者已被创建；
+  2. 当前不在该质押者到该验证者的unstaking状态；
+  3. 质押数量必须超过1000`CET`；
+  4. 质押后验证者的总质押数量必须超过10000`CET`。
+- actions: 
+  1. 给验证者质押，如果验证者不在候选出块节点集合中，将其加入。
 - params: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
@@ -74,6 +94,12 @@
 - name: `unstake`
 - type: transaction(not payable)
 - method: `function unstake(address validator) external onlyInitialized returns (bool)`
+- conditions: 
+  1. 该地址的验证者已被创建；
+  2. 当前不在该质押者到该验证者的unstaking状态；
+  3. 你质押到该验证者的数量大于0。
+- actions: 
+  1. 解除给某个验证者的质押，如果该验证者的总质押数量小于10000`CET`，将其从候选出块节点集合中踢出。
 - params: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
@@ -92,6 +118,13 @@
 - name: `withdrawStaking`
 - type: transaction(not payable)
 - method: `function withdrawStaking(address validator) external returns (bool)`
+- conditions: 
+  1. 该地址的验证者已被创建；
+  2. 当前处于该质押者到该验证者的unstaking状态，即已经执行了解除质押操作；
+  3. 质押已经解锁，即距离解除质押交易所在区块已超过86400个区块；
+  4. 你质押到该验证者的数量大于0。
+- actions: 
+  1. 提取质押给某个验证者的所有质押。
 - params: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
@@ -110,6 +143,13 @@
 - name: `withdrawRewards`
 - type: transaction(not payable)
 - method: `function withdrawRewards(address validator) external returns (bool)`
+- conditions: 
+  1. 该地址的验证者已被创建；
+  2. 交易发起者地址和该验证者设置的rewardAddr一致；
+  3. 距离上次提取出块奖励已超过86400个区块；
+  4. 待提取的奖励数量大于0。
+- actions: 
+  1. 提取出块奖励。
 - params: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
@@ -128,6 +168,11 @@
 - name: `unjailed`
 - type: transaction(not payable)
 - method: `function unjailed() external onlyInitialized returns (bool)`
+- conditions: 
+  1. 交易发起者是已创建的验证者，且该验证者的状态为Jailed。
+- actions: 
+  1. 调用Slash合约的`clean`方法，清除节点错块记录；
+  2. 如果该验证者的总质押数量超过10000`CET`，将其加入候选出块节点集合。
 - params: 
 - result: 
     | name | type | required | description |
