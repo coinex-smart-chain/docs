@@ -5,17 +5,17 @@ Parameter options related to validator node:
 
 | Option | Descripition |
 | --- | ----------- |
-|`--from`| Tx created address |
-|`--validator.address`| Validator address|
+|`--from`| The address who create the transaction|
+|`--validator.address`| Validator's address|
 |`--validator.rewardaddr` | Validator's reward receipt address|
 |`--validator.moniker` | Validator's nickname|
 |`--validator.website` | Validator's website|
-|`--validator.email` | Validator's Email|
+|`--validator.email` | Validator's email|
 |`--validator.detail` | Validator's description|
 |`--validator.staking` | Staking amount(the unit is Wei, 1CET = 10^18Wei)|
-|`--validator.staker` | Staker address|
-|`--node`| Connect node RPC|
-|`--nonce`| Address's nonce |
+|`--validator.staker` | Staker's address|
+|`--node`| Node RPC to connect to|
+|`--nonce`| Nonce of this address|
 |`--tx.gaslimit` | Gas limit of this transaction|
 |`--tx.gasprice` | Gas price of this transaction|
 |`--keystore` | Key file path of this address|
