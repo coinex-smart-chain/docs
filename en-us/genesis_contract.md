@@ -17,7 +17,7 @@
   3. Other parameters are valid, moniker < 128 bytes, website < 256 bytes, email < 256 bytes, details < 1024 bytes.
 - actions: 
   1. Create validator;
-  2. If the value of the transaction exceeds 10000 `CET`, the stake operation will be completed simultaneously.
+  2. If the value of the transaction exceeds `10000 CET`, the stake operation will be completed simultaneously.
 - params: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
@@ -72,8 +72,8 @@
 - conditions: 
   1. A validator for this address has been created;
   2. The status is not unstaking from the staker to the validator right now;
-  3. The amount of staking must exceed 1000`CET`;
-  4. After staking, the amount of the validator's total staking must exceed 10000`CET`.
+  3. The amount of staking must exceed `1000 CET`;
+  4. After staking, the amount of the validator's total staking must exceed `10000 CET`.
 - actions: 
   1. Stake for the validator to join the candidate validator list if the validator is not in it.
 - params: 
@@ -99,7 +99,7 @@
   2. The status is not unstaking from the staker to the validator right now;
   3. The amount of staking you staked to the validator is greater than 0.
 - actions: 
-  1. Unstake from the validator, if the amount of the validator's total staking less than 10000`CET`, kick it out of the candidate validator list.
+  1. Unstake from the validator, if the amount of the validator's total staking less than `10000 CET`, kick it out of the candidate validator list.
 - params: 
     | name | type | required | description |
     | :--- | :--- | :--- | :--- |
@@ -146,7 +146,7 @@
 - conditions: 
   1. A validator for this address has been created;
   2. The address who create this transaction is the same as the rewardAddr set by the validator;
-  3. It has been over 86,400 blocks since you last withdraw the reward;
+  3. It has been over 28,800 blocks since you last withdraw the reward;
   4. The number of rewards to be withdrew is greater than 0.
 - actions: 
   1. Withdraw rewards.
@@ -172,7 +172,7 @@
   1. The creator of the transaction is a created validator, and the validator was in a 'Jailed' state.
 - actions: 
   1. Invoke the `clean` method of the Slash contract to clear the node's wrong block record;
-  2. If the amount of the validator's total staking is more than 10000`CET`, add it to the candidate validator list.
+  2. If the amount of the validator's total staking is more than `10000 CET`, add it to the candidate validator list.
 - params: 
 - result: 
     | name | type | required | description |

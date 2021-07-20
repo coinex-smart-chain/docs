@@ -26,7 +26,7 @@ After rigorous investigation and research, CoinEx Team adheres to the principle 
 
 1. Validator
 
-Everyone is welcome to apply and become validator by staking `CET`. The first staking for the validator must exceed `10000 CET` and each subsequent staking must exceed `1000CET`. Based on overall staking ranking, the blockchain will select the top 101 nodes as validators in every 200 blocks. The validator has the obligation to generate blocks and verify on-chain info. In return, the validator will be rewarded with block commission fees and a certain amount of block production reward (currently `1 CET`) on the basis of the proportion of their staking.
+Everyone is welcome to apply and become validator by staking `CET`. The first staking for the validator must exceed `10000 CET` and each subsequent staking must exceed `1000 CET`. Based on overall staking ranking, the blockchain will select the top 101 nodes as validators in every 200 blocks. The validator has the obligation to generate blocks and verify on-chain info. In return, the validator will be rewarded with block commission fees and a certain amount of block production reward (currently `1 CET`) on the basis of the proportion of their staking.
 
 2. Staking
 

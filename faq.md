@@ -11,11 +11,13 @@
 
 ## 质押地址可以用CoinEx交易所里的CET地址吗？
 
-不能，验证节点地址、质押地址和收益接收地址，都不能是交易所的地址，你需要把交易所的CET提现到一个你掌握秘钥的CSC链上地址。
+不能，验证节点地址、质押地址和收益接收地址，都不能是交易所的地址，你需要把交易所的`CET`提现到一个你掌握秘钥的`CSC`链上地址。
 
 ## 怎样进行质押？
 
-为方便用户进行质押，`ViaWallet`正在开发相关功能。此外，用户还可以通过命令行操作进行执行，参考[命令行操作](/validator_cli.md)。
+为方便用户进行质押，`ViaWallet`正在开发相关功能。此外，你还可以通过命令行操作进行执行，参考[命令行操作](/validator_cli.md)。
+
+## 怎样导入私钥生成keystore文件？
 
 `cetd`发送交易需要`keystore`文件，除创建新地址之外，还可以通过`ViaWallet`钱包导出已有地址的私钥来创建`keystore`文件。
 
@@ -43,10 +45,38 @@ Repeat password:        # 再次输入keystore密码
 
 ## 怎样查看节点同步状态？
 
-你可以通过`curl`命令查看你的节点的高度
-`curl -X POST --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":52}' -H "Content-Type: application/json" "http://127.0.0.1:8545"`
+节点启动后，可以通过日志看到节点正在批量同步数据。
 
-或者通过`attach`，进入命令行查看
+在full同步模式下批量同步日志如：
+```
+INFO [07-20|14:52:01.019] Imported new chain segment               blocks=2048  txs=40  mgas=0.344  elapsed=1.189s    mgasps=0.290  number=545319 hash="6a6ccc…9927c5" age=2d20h36m dirty=1.52MiB
+INFO [07-20|14:52:02.400] Imported new chain segment               blocks=2048  txs=30  mgas=0.000  elapsed=1.359s    mgasps=0.000  number=547367 hash="a1808d…a1cca5" age=2d18h54m dirty=1.49MiB
+```
+
+在fast同步模式下批量同步日志如：
+```
+INFO [07-20|14:16:45.824] Imported new block headers               count=192 elapsed=60.650ms    number=576 hash="70b7f1…134b31" age=3w17h58m
+INFO [07-20|14:16:45.848] Imported new block receipts              count=199 elapsed=59.555ms    number=199 hash="70ce80…9d43c0" age=3w18h17m size=125.42KiB
+INFO [07-20|14:16:45.868] Imported new state entries               count=656 elapsed=178.538ms   processed=656 pending=1608 trieretry=0 coderetry=0 duplicate=0 unexpected=0
+INFO [07-20|14:16:45.870] Imported new block headers               count=192 elapsed=44.446ms    number=768 hash="5bb863…fb1db2" age=3w17h49m
+```
+
+当节点同步到最新高度后，可以看到逐个同步最新区块的日志：
+```
+INFO [07-20|14:36:06.014] Imported new chain segment               blocks=1  txs=0 mgas=0.000 elapsed="508.412µs" mgasps=0.000  number=627329 hash="09ea78…778e18" dirty=350.97KiB
+INFO [07-20|14:36:09.017] Imported new chain segment               blocks=1  txs=0 mgas=0.000 elapsed="514.204µs" mgasps=0.000  number=627330 hash="d5fe32…8c27b2" dirty=350.97KiB
+```
+
+## 怎样查看节点区块高度？
+
+查询节点的区块高度，与浏览器数据对比，可以判断节点是否已同步到最新区块高度。
+
+除查看节点日志外，你也可以通过`curl`命令查看节点的区块高度
+```shell
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":52}' -H "Content-Type: application/json" "http://127.0.0.1:8545"
+```
+
+或者可以通过`attach`，进入命令行控制台查看
 ```
 $ cetd attach data/cetd.ipc 
 Welcome to the Geth JavaScript console!
@@ -58,13 +88,25 @@ at block: 455139 (Wed Jul 14 2021 15:06:32 GMT+0800 (CST))
 
 To exit, press ctrl-d
 > eth.blockNumber
-455141
+627221
+>
 ```
 
-## 质押后多久可以解除质押？解除质押后多久可以提取质押？
+## 怎样解除质押并提取质押？
 
-质押后随时可以解除质押，但是要等86400个块才能提取质押，按现在3s一个块来算，大概需要等待3天。
-每次解除质押只能全部解除，解除后一次提取你质押到该验证节点的全部质押。
+为方便用户解除质押和提取质押，`ViaWallet`正在开发相关功能。此外，你还可以通过命令行操作进行执行，参考[命令行操作](/validator_cli.md)。
+
+## 什么时候可以解除质押？
+
+质押后随时可以解除质押。
+
+## 可以只解除一部分质押吗？
+
+每次解除质押只能解除你质押到某个验证节点的全部质押。
+
+## 解除质押后多久可以提取质押？
+
+要等86400个块才能提取质押，按现在3s一个块来算，大概需要等待3天。
 
 ## 多久可以提取一次奖励？
 

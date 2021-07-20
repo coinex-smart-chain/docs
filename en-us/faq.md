@@ -11,11 +11,13 @@ The reward of the validator will be uniformly allocated to the reward receipt ad
 
 ## Can a staker's address be the CET address in the Coinex exchange?
 
-No. Validator's address, staker's address and reward receipt address can't be the address in the Coinex exchange. You need to transfer your CET to an address on the `CSC` where you have the secret key.
+No. Validator's address, staker's address and reward receipt address can't be the address in the Coinex exchange. You need to transfer your `CET` to an address on the `CSC` where you have the secret key.
 
 ## How to stake？
 
-To make it easier for users to stake, `ViaWallet` is developing related features. In addition, the user can stake via command line operations, refer to [command-line operations](/validator_cli.md).
+To make it easier for users to stake, `ViaWallet` is developing related features. In addition, you can stake via command line operations, refer to [command-line operations](/validator_cli.md).
+
+## How to generate a keystore file by importing a private key?
 
 `cetd` needs `keystore` file to send transactions, In addition to creating a new address, you can also export the private key of a created address from `ViaWallet` to create `keystore` file.
 
@@ -43,10 +45,38 @@ Yes.
 
 ## How to check node synchronization status?
 
-You can check the height of your node with the `curl` command.
-`curl -X POST --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":52}' -H "Content-Type: application/json" "http://127.0.0.1:8545"`
+After the node is started, you can see through the log that the node is synchronizing data in batches.
 
-Or via `attach` command and go to the command line console
+In full synchronization mode, batch synchronization logs are as follows:
+```
+INFO [07-20|14:52:01.019] Imported new chain segment               blocks=2048  txs=40  mgas=0.344  elapsed=1.189s    mgasps=0.290  number=545319 hash="6a6ccc…9927c5" age=2d20h36m dirty=1.52MiB
+INFO [07-20|14:52:02.400] Imported new chain segment               blocks=2048  txs=30  mgas=0.000  elapsed=1.359s    mgasps=0.000  number=547367 hash="a1808d…a1cca5" age=2d18h54m dirty=1.49MiB
+```
+
+In fast synchronization mode, batch synchronization logs are as follows:
+```
+INFO [07-20|14:16:45.824] Imported new block headers               count=192 elapsed=60.650ms    number=576 hash="70b7f1…134b31" age=3w17h58m
+INFO [07-20|14:16:45.848] Imported new block receipts              count=199 elapsed=59.555ms    number=199 hash="70ce80…9d43c0" age=3w18h17m size=125.42KiB
+INFO [07-20|14:16:45.868] Imported new state entries               count=656 elapsed=178.538ms   processed=656 pending=1608 trieretry=0 coderetry=0 duplicate=0 unexpected=0
+INFO [07-20|14:16:45.870] Imported new block headers               count=192 elapsed=44.446ms    number=768 hash="5bb863…fb1db2" age=3w17h49m
+```
+
+When the nodes are synchronized to the latest height, you can see logs that synchronize the latest block by block:
+```
+INFO [07-20|14:36:06.014] Imported new chain segment               blocks=1  txs=0 mgas=0.000 elapsed="508.412µs" mgasps=0.000  number=627329 hash="09ea78…778e18" dirty=350.97KiB
+INFO [07-20|14:36:09.017] Imported new chain segment               blocks=1  txs=0 mgas=0.000 elapsed="514.204µs" mgasps=0.000  number=627330 hash="d5fe32…8c27b2" dirty=350.97KiB
+```
+
+## How to query the block height of a node?
+
+By querying the block height of a node and comparing it with the browser data, we can find out whether the node has been synchronized to the latest block height.
+
+In addition to looking at the node logs, you can also check the height of your node with the `curl` command.
+```shell
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":52}' -H "Content-Type: application/json" "http://127.0.0.1:8545"
+```
+
+Or via `attach` command and go to the command line console:
 ```
 $ cetd attach data/cetd.ipc 
 Welcome to the Geth JavaScript console!
@@ -61,16 +91,27 @@ To exit, press ctrl-d
 455141
 ```
 
-## How long can the staking be withdrew after stake? How long can the staking be withdrew after unstake?
+## How to unstake and withdraw the staking?
 
-You can unstake at any time after you stake, but you need to wait for 86,400 blocks to withdraw your staking. Based on the current 3s block time, it probably needs to wait for 3 days.
-Each time you unstake, you can only unstake and withdraw all the staking you have staked to the validator.
+To make it easier for users to unstake and withdraw the staking, `ViaWallet` is developing related features. In addition, you can do it via command line operations, refer to [command-line operations](/validator_cli.md).
 
-## How often can I withdraw the reward?
+## When can I unstake? 
+
+You can unstake at any time after you stake.
+
+## Can I unstake only part of my staking?
+
+Each time you unstake, you can only unstake all the staking you have staked to a certain validator.
+
+## How long can I withdraw my staking after unstaking?
+
+You need to wait for 86,400 blocks to withdraw your staking. Based on the current 3s block time, it probably needs to wait for 3 days.
+
+## How often can I withdraw my reward?
 
 It must be more than 28,800 blocks since you withdrawn reward last time.
 
-## How do you unjail a node?
+## How to unjail a node?
 
 If a node had been jailed, the first thing to do is investigate the cause. Restart the node after you fix the problem, and unjail the node through command line operation after the node is up and running properly and has been synchronized to the latest height.
 
