@@ -3,7 +3,7 @@
 - [Consensus](/en-us/consensus.md)
 - [Genesis](/en-us/genesis.md)
 - [Smart Contract](https://docs.soliditylang.org/en/latest/)
-- Nodes
+- Node
   - [Compile](/en-us/node_compile.md)
   - [Run](/en-us/node_run.md)
   - [Private Chain](/en-us/node_private_chain.md)
@@ -11,6 +11,7 @@
   - [Introduction](/en-us/validator_intro.md)
   - [Run](/en-us/validator_guide.md)
   - [CLI](/en-us/validator_cli.md)
+  - [Genesis Contract](/genesis_contract.md)
 - DApp development
   - [Mainnet](/en-us/mainnet.md)
   - [Testnet](/en-us/testnet.md)
@@ -18,3 +19,5 @@
   - [CRC20](/en-us/crc20.md)
   - [Remix](/en-us/contract_remix.md)
   - [Truffle](/en-us/contract_truffle.md)
+- FAQ
+  - [FAQ](/faq.md)

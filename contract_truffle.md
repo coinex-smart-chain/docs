@@ -68,12 +68,12 @@ module.exports = {
     testnet: {
       provider: () => new HDWalletProvider(mnemonic, 'https://testnet-rpc.coinex.net'),
       network_id: 53,
-      gasPrice: 100000000000
+      gasPrice: 500000000000
     },
     mainnet: {
       provider: () => new HDWalletProvider(mnemonic, 'https://rpc.coinex.net'),
       network_id: 52,
-      gasPrice: 100000000000
+      gasPrice: 500000000000
     }
   },
 
@@ -174,7 +174,7 @@ Starting migrations...
    > account:             0x3845970B03eDD143295Ae2B1EaE73Beb1ddFd6f3
    > balance:             99.9967165
    > gas used:            164175 (0x2814f)
-   > gas price:           100 gwei
+   > gas price:           500 gwei
    > value sent:          0 ETH
    > total cost:          0.0032835 ETH
 
@@ -198,7 +198,7 @@ Starting migrations...
    > account:             0x3845970B03eDD143295Ae2B1EaE73Beb1ddFd6f3
    > balance:             99.99396028
    > gas used:            95470 (0x174ee)
-   > gas price:           100 gwei
+   > gas price:           500 gwei
    > value sent:          0 ETH
    > total cost:          0.0019094 ETH
 
@@ -217,7 +217,7 @@ Starting migrations...
    > account:             0x3845970B03eDD143295Ae2B1EaE73Beb1ddFd6f3
    > balance:             99.98822898
    > gas used:            286565 (0x45f65)
-   > gas price:           100 gwei
+   > gas price:           500 gwei
    > value sent:          0 ETH
    > total cost:          0.0057313 ETH
 
