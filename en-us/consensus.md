@@ -48,9 +48,9 @@ Due to network, hardware, configuration and other factors, `CSC` might suffer fr
 
 Mainly, the rewards for validators are from block rewards (`1 CET` per block) and commission fees from block transactions. The reward differs according to the proportion of validator staking in overall staking. Since the validator take turns to generates blocks with the same probability (if they remain 100% online), the revenues of all validators are only related to their staking proportion.
 
-The blockchain distributes rewards in proportion to the staking every 200 blocks. Validator's reward receipt address can retrieve the reward by invoking the contract or via [node command line](/validator_cli.md). Rewards can be withdrawed every 28,800 blocks.
+The blockchain distributes rewards in proportion to the staking every 200 blocks. Validator's reward receipt address can retrieve the reward by invoking the contract or via [node command line](/en-us/validator_cli.md). Rewards can be withdrawed every 28,800 blocks.
 
 ## Slash
 `CSC` punishes the validator node that fails to produce block normally. All validator nodes take turns to generate blocks. When it is the turn of a node to produce a block but it fails, the wrong block record will be increased by one. Every 200 blocks decreases the wrong block records of all nodes by one. When the wrong block record reaches 48, `500 CET` of penalty fee will be taken from the validator's staked assets. If more than one address has staked to the node, the penalty is proportional to the staking.
 
-You can inquire node's wrong block record by invoking the contract or via [node command line](/validator_cli.md). 
+You can inquire node's wrong block record by invoking the contract or via [node command line](/en-us/validator_cli.md). 

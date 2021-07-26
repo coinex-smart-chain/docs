@@ -114,8 +114,8 @@ To exit, press ctrl-d
 
 ## 节点进入Jailed状态后怎么解除？
 
-假如节点进入Jailed状态，应首先排查原因。问题排查后重启节点，在节点正常运行并同步到最新高度后，通过命令行操作释放节点。
+假如节点进入Jailed状态，应首先排查原因。问题排查后重启节点，在节点正常运行并同步到最新高度后，通过[命令行操作](/validator_cli.md)释放节点。
 
 ## gasprice
 
-`CSC`限制交易最小gasprice为500GWei。
+`CSC`限制交易最小gasprice为`500GWei`。

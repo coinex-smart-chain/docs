@@ -12,7 +12,7 @@
 |`--validator.website` | 验证节点官网|
 |`--validator.email` | 验证节点邮箱|
 |`--validator.detail` | 验证节点描述|
-|`--validator.staking` | 质押数量（单位为Wei，1CET = 10^18Wei）|
+|`--validator.staking` | 质押数量（单位为`Wei`，1`CET` = 10^18`Wei`）|
 |`--validator.staker` | 质押者地址|
 |`--node`| 连接节点rpc|
 |`--nonce`| 指定交易地址nonce|

@@ -4,7 +4,7 @@
 
 `CSC` separates validator's address, staker's address and reward receipt address, they can be different。
 Because the block needs to be signed, the `keystore` and password to the validator's address must be placed on the server.
-Any address can stake to a validator. After the staker's address unstake and withdraw his staking, the staked `CET` will be returned to the original staker's address.
+Any address can stake to a validator. After the staker's address unstakes and withdraws his staking, the staked `CET` will be returned to the original staker's address.
 The reward of the validator will be uniformly allocated to the reward receipt address set by the validator, and only the reward receipt address can withdraw the reward.
 
 > We suggest that the node builder separates validator's address and staker's address, so that the `keystore` and password of the staker do not need to be stored on the server, and there is no need to worry about the loss of the staker after the server is hacked.
@@ -15,7 +15,7 @@ No. Validator's address, staker's address and reward receipt address can't be th
 
 ## How to stake？
 
-To make it easier for users to stake, `ViaWallet` is developing related features. In addition, you can stake via command line operations, refer to [command-line operations](/validator_cli.md).
+To make it easier for users to stake, `ViaWallet` is developing related features. In addition, you can stake via command line operations, refer to [node command line](/en-us/validator_cli.md).
 
 ## How to generate a keystore file by importing a private key?
 
@@ -93,7 +93,7 @@ To exit, press ctrl-d
 
 ## How to unstake and withdraw the staking?
 
-To make it easier for users to unstake and withdraw the staking, `ViaWallet` is developing related features. In addition, you can do it via command line operations, refer to [command-line operations](/validator_cli.md).
+To make it easier for users to unstake and withdraw the staking, `ViaWallet` is developing related features. In addition, you can do it via command line operations, refer to [node command line](/en-us/validator_cli.md).
 
 ## When can I unstake? 
 
@@ -113,8 +113,8 @@ It must be more than 28,800 blocks since you withdrawn reward last time.
 
 ## How to unjail a node?
 
-If a node had been jailed, the first thing to do is investigate the cause. Restart the node after you fix the problem, and unjail the node through command line operation after the node is up and running properly and has been synchronized to the latest height.
+If a node has been jailed, the first thing to do is investigate the cause. Restart the node after you fix the problem, and unjail the node through [command line operations](/en-us/validator_cli.md) after the node is up and running properly and has been synchronized to the latest height.
 
 ## gasprice
 
-`CSC` limits the transaction minimum gasprice to 500GWEI.
+`CSC` limits the transaction minimum gasprice to `500 GWEI`.
