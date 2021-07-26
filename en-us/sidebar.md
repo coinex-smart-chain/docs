@@ -11,7 +11,7 @@
   - [Introduction](/en-us/validator_intro.md)
   - [Run](/en-us/validator_guide.md)
   - [CLI](/en-us/validator_cli.md)
-  - [Genesis Contract](/genesis_contract.md)
+  - [Genesis Contract](/en-us/genesis_contract.md)
 - DApp development
   - [Mainnet](/en-us/mainnet.md)
   - [Testnet](/en-us/testnet.md)
@@ -20,4 +20,4 @@
   - [Remix](/en-us/contract_remix.md)
   - [Truffle](/en-us/contract_truffle.md)
 - FAQ
-  - [FAQ](/faq.md)
+  - [FAQ](/en-us/faq.md)
