@@ -12,7 +12,7 @@ Parameter options related to validator node:
 |`--validator.website` | Validator's website|
 |`--validator.email` | Validator's email|
 |`--validator.detail` | Validator's description|
-|`--validator.staking` | Staking amount(the unit is Wei, 1CET = 10^18Wei)|
+|`--validator.staking` | Staking amount(the unit is `Wei`, 1`CET` = 10^18`Wei`)|
 |`--validator.staker` | Staker's address|
 |`--node`| Node RPC to connect to|
 |`--nonce`| Nonce of this address|

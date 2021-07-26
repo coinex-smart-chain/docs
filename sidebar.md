@@ -4,7 +4,7 @@
 - [创世文件](/genesis.md)
 - [智能合约](https://docs.soliditylang.org/en/latest/)
 - 节点
-  - [编译和安装](/node_compile.md)
+  - [编译](/node_compile.md)
   - [启动节点](/node_run.md)
   - [搭建私链](/node_private_chain.md)
 - 验证人
