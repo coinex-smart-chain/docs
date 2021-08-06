@@ -10,7 +10,7 @@ HDD: SSD 1TB
 
 ## Initialize
 
-Refer to [Node Run](/en-us/node_run.md)
+Refer to [Run a Node](/en-us/node_run.md)
 
 ## Create Validator Address
 

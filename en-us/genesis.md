@@ -4,7 +4,7 @@
 
 The Genesis file defines the initial state of CoinEx Smart Chain (CSC), which may be viewed at block height `0`. `CSC`s first block starts from `1`, whose parent block is Genesis Block.
 
-To facilitate user operation, `CSC` directly integrates Genesis Block into the binary package `cetd` and no download is required when setting up the node. If you are interested in Genesis Block, you can download and view the details via [GitHub]( https://github.com/coinex-smart-chain/csc). For those who want to build their own chain with CSC, Genesis File is also available for customization and editing. Refer to [Private Chain Setup](/en-us/node_private_chain.md).
+To facilitate user operation, `CSC` directly integrates Genesis Block into the binary package `cetd` and no download is required when setting up the node. If you are interested in Genesis Block, you can download and view the details via [GitHub]( https://github.com/coinex-smart-chain/csc). For those who want to build their own chain with CSC, Genesis File is also available for customization and editing. Refer to [Private Chain](/en-us/node_private_chain.md).
 
 The following is the interpretation of parameters in Genesis File.
 

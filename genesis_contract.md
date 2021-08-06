@@ -1,4 +1,4 @@
-# 系统合约调用
+# 系统合约
 
 [csc-genesis-contract](https://github.com/coinex-smart-chain/csc-genesis-contract)
 

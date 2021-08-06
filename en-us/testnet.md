@@ -7,6 +7,7 @@
 ## rpc
 
 ```
+https://testnet-rpc.coinex.net/
 https://testnet-rpc1.coinex.net/
 https://testnet-rpc2.coinex.net/
 ```
