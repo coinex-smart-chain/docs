@@ -17,6 +17,7 @@
   - [测试网信息](/testnet.md)
   - [账户管理](/wallet_manage.md)
   - [CRC20](/crc20.md)
+  - [NFT](/nft.md)
   - [Remix](/contract_remix.md)
   - [Truffle](/contract_truffle.md)
 - FAQ
