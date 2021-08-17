@@ -1,26 +1,26 @@
 # CRC20 Token Standard
 
-'CoinEx Smart Chain (CSC)' is fully compatible with Ethereum [ERC20](https://eips.ethereum.org/EIPS/eip-20) Standard.
+`CSC` is fully compatible with Ethereum [ERC20](https://eips.ethereum.org/EIPS/eip-20) Standard.
 
 ```
 // ----------------------------------------------------------------------------
 // CRC Token Standard #20 Interface
 // ----------------------------------------------------------------------------
 contract CRC20Interface {
-    function totalSupply() public constant returns (uint);
-    function balanceOf(address tokenOwner) public constant returns (uint balance);
-    function allowance(address tokenOwner, address spender) public constant returns (uint remaining);
-    function transfer(address to, uint tokens) public returns (bool success);
-    function approve(address spender, uint tokens) public returns (bool success);
-    function transferFrom(address from, address to, uint tokens) public returns (bool success);
+    function totalSupply() public constant returns (uint256);
+    function balanceOf(address tokenOwner) public constant returns (uint256 balance);
+    function allowance(address tokenOwner, address spender) public constant returns (uint256 remaining);
+    function transfer(address to, uint256 tokens) public returns (bool success);
+    function approve(address spender, uint256 tokens) public returns (bool success);
+    function transferFrom(address from, address to, uint256 tokens) public returns (bool success);
 
     // Optional
     function name() public view returns (string);
     function symbol() public view returns (string);
     function decimals() public view returns (uint8);
 
-    event Transfer(address indexed from, address indexed to, uint tokens);
-    event Approval(address indexed tokenOwner, address indexed spender, uint tokens);
+    event Transfer(address indexed from, address indexed to, uint256 tokens);
+    event Approval(address indexed tokenOwner, address indexed spender, uint256 tokens);
 }
 ```
 
@@ -60,7 +60,7 @@ const w3 = new Web3("https://testnet-rpc.coinex.net");
 
 ```Python
 from web3 import Web3
-provider = Web3.HTTPProvider("https://csc-rpc.coinex.net")
+provider = Web3.HTTPProvider("https://rpc.coinex.net")
 w3 = Web3(provider)
 ```
 

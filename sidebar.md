@@ -11,12 +11,13 @@
   - [介绍](/validator_intro.md)
   - [启动验证节点](/validator_guide.md)
   - [命令行操作](/validator_cli.md)
-  - [系统合约调用](/genesis_contract.md)
+  - [系统合约](/genesis_contract.md)
 - DAPP开发
   - [主网信息](/mainnet.md)
   - [测试网信息](/testnet.md)
   - [账户管理](/wallet_manage.md)
   - [CRC20](/crc20.md)
+  - [NFT](/nft.md)
   - [Remix](/contract_remix.md)
   - [Truffle](/contract_truffle.md)
 - FAQ

@@ -17,6 +17,7 @@
   - [Testnet](/en-us/testnet.md)
   - [Account management](/en-us/wallet_manage.md)
   - [CRC20](/en-us/crc20.md)
+  - [NFT](/en-us/nft.md)
   - [Remix](/en-us/contract_remix.md)
   - [Truffle](/en-us/contract_truffle.md)
 - FAQ

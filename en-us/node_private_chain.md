@@ -3,7 +3,7 @@
 ## Prepare
 
 * Lay out the number of nodes.
-* Setup hardware for validator node. Refer to [Node Running](/en-us/node_run.md)
+* Setup hardware for validator node. Refer to [Run a Node](/en-us/node_run.md).
 * Create validator node address.
 
 ## Genesis Block
