@@ -7,6 +7,7 @@
   - [编译](/node_compile.md)
   - [启动节点](/node_run.md)
   - [搭建私链](/node_private_chain.md)
+  - [快照](/snapshot.md)
 - 验证人
   - [介绍](/validator_intro.md)
   - [启动验证节点](/validator_guide.md)

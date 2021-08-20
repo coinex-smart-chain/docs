@@ -7,6 +7,7 @@
   - [Compile](/en-us/node_compile.md)
   - [Run](/en-us/node_run.md)
   - [Private Chain](/en-us/node_private_chain.md)
+  - [Snapshot](/en-us/snapshot.md)
 - Validator
   - [Introduction](/en-us/validator_intro.md)
   - [Run](/en-us/validator_guide.md)
