@@ -1,4 +1,4 @@
-# Wallet account management
+# Wallet Account Management
 
 Some interfaces that interact with the chain have been encapsulated by `web3` to facilitate our `DApp` development. Via theses `web3` encapsulated interfaces, we can use different languages to interact with `CSC`. 
 This article elaborates on how to use `JavaScript` and `Python` to manage accounts on `CSC` through `Web3`.

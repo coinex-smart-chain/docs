@@ -16,7 +16,7 @@
 - DApp development
   - [Mainnet](/en-us/mainnet.md)
   - [Testnet](/en-us/testnet.md)
-  - [Account management](/en-us/wallet_manage.md)
+  - [Account Management](/en-us/wallet_manage.md)
   - [CRC20](/en-us/crc20.md)
   - [NFT](/en-us/nft.md)
   - [Remix](/en-us/contract_remix.md)
