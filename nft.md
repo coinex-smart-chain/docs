@@ -10,7 +10,7 @@
 // ----------------------------------------------------------------------------
 // CRC Token Standard #721 Interface
 // ----------------------------------------------------------------------------
-contract CRC721Interface {
+interface CRC721 /* is CRC165 */ {
     function balanceOf(address _owner) external view returns (uint256);
     function ownerOf(uint256 _tokenId) external view returns (address);
     function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;
@@ -20,23 +20,30 @@ contract CRC721Interface {
     function setApprovalForAll(address _operator, bool _approved) external;
     function getApproved(uint256 _tokenId) external view returns (address);
     function isApprovedForAll(address _owner, address _operator) external view returns (bool);
-      
-    // ERC165
-    function supportsInterface(bytes4 interfaceID) external view returns (bool);
-
-    // Optional
-    function name() external view returns (string _name);
-    function symbol() external view returns (string _symbol);
-    function tokenURI(uint256 _tokenId) external view returns (string);
-    
-    function totalSupply() external view returns (uint256);
-    function tokenByIndex(uint256 _index) external view returns (uint256);
-    function tokenOfOwnerByIndex(address _owner, uint256 _index) external view returns (uint256);
 
     // Event
     event Transfer(address indexed _from, address indexed _to, uint256 indexed _tokenId);
     event Approval(address indexed _owner, address indexed _approved, uint256 indexed _tokenId);
     event ApprovalForAll(address indexed _owner, address indexed _operator, bool _approved);
+}
+
+// Query if a contract implements an interface
+interface CRC165 {
+    function supportsInterface(bytes4 interfaceID) external view returns (bool);
+}
+
+// Optional
+interface CRC721Metadata /* is CRC721 */ {
+    function name() external view returns (string _name);
+    function symbol() external view returns (string _symbol);
+    function tokenURI(uint256 _tokenId) external view returns (string);
+}
+
+// Optional
+interface CRC721Enumerable /* is CRC721 */ {
+    function totalSupply() external view returns (uint256);
+    function tokenByIndex(uint256 _index) external view returns (uint256);
+    function tokenOfOwnerByIndex(address _owner, uint256 _index) external view returns (uint256);
 }
 ```
 
