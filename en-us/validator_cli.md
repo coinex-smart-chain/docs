@@ -1,4 +1,4 @@
-## Node CLI
+# Node CLI
 Using `cetd --help` to check instructions of each operation and supported parameter options, and then introduce operations related to validator node.
 
 Parameter options related to validator node:
