@@ -27,7 +27,7 @@ No. Validator's address, staker's address and reward receipt address can't be th
 
 ## How to stake？
 
-To make it easier for users to stake, `ViaWallet` is developing related features. In addition, you can stake via command line operations, refer to [node command line](/en-us/validator_cli.md).
+You can stake via command line operations, refer to [node command line](/en-us/validator_cli.md).
 
 ## How to generate a keystore file by importing a private key?
 
@@ -105,7 +105,7 @@ To exit, press ctrl-d
 
 ## How to unstake and withdraw the staking?
 
-To make it easier for users to unstake and withdraw the staking, `ViaWallet` is developing related features. In addition, you can do it via command line operations, refer to [node command line](/en-us/validator_cli.md).
+You can do it via command line operations, refer to [node command line](/en-us/validator_cli.md).
 
 ## When can I unstake? 
 
