@@ -1,5 +1,17 @@
 # FAQ
 
+## What is a CSC address?
+
+There are two types of addresses in `CSC`: Externally Owned Address (EOA) and Contract Address.
+
+Externally Owned Address refers to an account with a public and private key pair. It is a 42-character hexadecimal address derived from the last 20 bytes of the public key controlling the account with `0x` appended in front. e.g., `0x71C7656EC7ab88b098defB751B7401B5f6d8976F`.
+
+The `CSC` address is the "public" address that you would need to receive funds from another party. To access funds in the address, you must have its private key. Kindly exercise duty of care when handling your private key as they can be used to access all the funds in an address. 
+
+Contract address refers to the address hosting a collection of code on the `CSC` blockchain that executes functions. These functions of a contract address are executed when a transaction with associated input data (contract interaction) is made to it.
+
+The contract address is usually created when a contract is deployed to the `CSC` Blockchain. Both Externally Owned and Contract Addresses share the same format of having 42 hexadecimal characters.
+
 ## Can validator's address, staker's address and reward receipt address be different?
 
 `CSC` separates validator's address, staker's address and reward receipt address, they can be different。

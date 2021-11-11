@@ -3,6 +3,7 @@
 - [Consensus](/en-us/consensus.md)
 - [Genesis](/en-us/genesis.md)
 - [Smart Contract](https://docs.soliditylang.org/en/latest/)
+- [Glossary](/en-us/glossary.md)
 - Node
   - [Compile](/en-us/node_compile.md)
   - [Run](/en-us/node_run.md)
