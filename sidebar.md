@@ -3,6 +3,7 @@
 - [共识](/consensus.md)
 - [创世文件](/genesis.md)
 - [智能合约](https://docs.soliditylang.org/en/latest/)
+- [术语表](/glossary.md)
 - 节点
   - [编译](/node_compile.md)
   - [启动节点](/node_run.md)
