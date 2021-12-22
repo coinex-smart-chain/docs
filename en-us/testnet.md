@@ -12,6 +12,14 @@ https://testnet-rpc1.coinex.net/
 https://testnet-rpc2.coinex.net/
 ```
 
+## Websocket Endpoints
+
+*Note: provided by community with no quality promised, building your node should be always the long term goal*
+
+```
+wss://testnet-ws.coinex.net/
+```
+
 ## Explorer
 
 ```

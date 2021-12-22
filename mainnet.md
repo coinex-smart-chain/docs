@@ -14,6 +14,14 @@ https://rpc3.coinex.net/
 https://rpc4.coinex.net/
 ```
 
+## Websocket
+
+*注:由社区提供，没有质量保证，构建你自己的节点应该始终是长期目标*
+
+```
+wss://csc-ws.coinex.net/
+```
+
 ## 浏览器
 
 ```
