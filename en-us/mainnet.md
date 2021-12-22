@@ -14,6 +14,14 @@ https://rpc3.coinex.net/
 https://rpc4.coinex.net/
 ```
 
+## Websocket Endpoints
+
+*Note: provided by community with no quality promised, building your node should be always the long term goal*
+
+```
+wss://csc-ws.coinex.net/
+```
+
 ## Explorer
 
 ```
