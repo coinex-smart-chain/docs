@@ -14,7 +14,7 @@ https://testnet-rpc2.coinex.net/
 
 ## Websocket
 
-*注:由社区提供，没有质量保证，构建你的节点应该始终是长期目标*
+*注:由社区提供，没有质量保证，构建你自己的节点应该始终是长期目标*
 
 ```
 wss://testnet-ws.coinex.net/
