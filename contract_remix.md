@@ -44,7 +44,7 @@ symbol: CET
 explorer: https://www.coinex.net
 ```
 
-![metamask](./images/metamask.png)
+<img src="./images/metamask.png" style="width: 360px;" alt="metamask">
 
 * 测试网
 ```

@@ -2,13 +2,14 @@
 
 ## ViaWallet
 
-下载地址：`https://viawallet.com/`
+下载地址：https://viawallet.com/
 
 ## MetaMask
 
-下载地址：`https://metamask.io/`
+下载地址：https://metamask.io/
 
 ### 配置
+
 * 主网
 
 ```
@@ -18,9 +19,10 @@ symbol: CET
 explorer: https://www.coinex.net
 ```
 
-![metamask](./images/metamask.png)
+<img src="./images/metamask.png" style="width: 360px;" alt="metamask">
 
 * 测试网
+
 ```
 rpc: https://testnet-rpc.coinex.net
 chainID: 53
